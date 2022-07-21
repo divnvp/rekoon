@@ -29,6 +29,54 @@ defineEmits(["update:modelValue", "close"]);
           Поиск
         </button>
       </aside>
+
+      <aside class="display_col card">
+        <span class="card__title">Параметры фильма</span>
+      
+        <section class="params">
+          <section class="params-inputs_location">
+            <select>
+              <option select>Область</option>
+            </select>
+
+            <select>
+              <option select>Город</option>
+            </select>
+
+            <select>
+              <option select>Район/Округ</option>
+            </select>
+            
+            <button class="params__button">
+              Применить
+            </button>
+          </section>
+          
+          <aside class="params__buttons">
+            <button class="params__buttons_square" >
+              <img src="../assets/list.png" />
+            </button>
+
+            <button class="params__buttons_square">
+              <img src="../assets/grid.png" />
+            </button>
+
+            <button class="params__buttons_square">
+              <img src="../assets/printer.png" />
+            </button>
+          </aside>
+        </section>
+      </aside>
+
+      <aside class="map">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa9f2cfe5c9cec244c907c53a36f61dc9136db03f48d5bbd7c9819ebdc4641443&amp;source=constructor" width="890" height="400" frameborder="0" />
+      </aside>
+
+      <aside class="display">
+        <button class="full-button_red">
+          Добавить все отобранные отделения
+        </button>
+      </aside>
     </div>
   </section>
 </template>
@@ -57,7 +105,7 @@ defineEmits(["update:modelValue", "close"]);
 
     padding: 32px 40px;
 
-    width: 970px;
+    max-width: 970px;
     
     display: flex;
     flex-direction: column;
@@ -108,6 +156,11 @@ defineEmits(["update:modelValue", "close"]);
   display: flex;
   flex-direction: row;
   flex: 1 1 0;
+
+  &_col {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .justify-content_space-between {
@@ -154,5 +207,127 @@ defineEmits(["update:modelValue", "close"]);
 
     color: #FFFFFF;
   }
+}
+
+.card {
+  border: 1px solid #D9DADB;
+  border-radius: 3px;
+  margin-top: 25px;
+
+  &__title {
+    margin-top: -15px;
+    background-color: white;
+
+    width: 173px;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+
+    text-transform: uppercase;
+
+    color: #040811;
+  }
+}
+
+.params {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex: 1 1 0;
+
+  padding: 24px;
+
+  &-inputs_location {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-right: 41px;
+
+    select {
+      border: 1px solid #D9DADB;
+      border-radius: 3px;
+      padding: 0 16px;
+
+      width: 160px;
+
+      margin-right: 8px;
+    }
+  }
+
+  &__button {
+    padding: 12px 24px;
+
+    border: none;
+
+    width: 137px;
+
+    cursor: pointer;
+
+    background: #EEF2FB;
+    border-radius: 3px;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #040811;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &_square {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      border: none;
+
+      background: #EEF2FB;
+      border-radius: 3px;
+
+      width: 40px;
+      height: 40px;
+    }    
+  }
+}
+
+.map {
+  display: flex;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.full-button_red {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 0;
+
+  background: #E90D00;
+  box-shadow: 0px 0px 15px rgba(233, 13, 0, 0.25);
+  border-radius: 3px;
+  border: none;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+
+
+  padding: 14px 0;
 }
 </style>
