@@ -69,12 +69,62 @@ defineEmits(["update:modelValue", "close"]);
       </aside>
 
       <aside class="map">
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa9f2cfe5c9cec244c907c53a36f61dc9136db03f48d5bbd7c9819ebdc4641443&amp;source=constructor" width="890" height="400" frameborder="0" />
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa9f2cfe5c9cec244c907c53a36f61dc9136db03f48d5bbd7c9819ebdc4641443&amp;source=constructor"
+          width="890"
+          height="400"
+          frameborder="0"
+          style="border-radius: 3px;"
+        />
       </aside>
 
       <aside class="display">
         <button class="full-button_red">
           Добавить все отобранные отделения
+        </button>
+      </aside>
+
+      <aside class="table">
+        <div v-for="n in 9" :key="n" class="small-card_blue">
+          <span class="small-card_blue__black-font">
+            Россия, Москва <br /> ул. Коштоянца, 33
+          </span>
+
+          <button class="small-card_blue__adding">
+            + Добавить
+          </button>
+        </div>
+      </aside>
+
+      <hr class="hr-line">
+
+      <aside class="pagination">
+        <button class="chevron">
+          <img src="../assets/chevron-down.png" />
+        </button>
+        
+        <button class="chevron">
+          1
+        </button>
+
+        <button class="chevron">
+          2
+        </button>
+
+        <button class="chevron">
+          3
+        </button>
+
+        <button class="chevron">
+          ...
+        </button>
+
+        <button class="chevron">
+          5
+        </button>
+
+        <button class="chevron">
+          <img src="../assets/chevron-down2.png" />
         </button>
       </aside>
     </div>
@@ -243,7 +293,7 @@ defineEmits(["update:modelValue", "close"]);
     flex-direction: row;
     justify-content: space-between;
 
-    margin-right: 41px;
+    margin-right: 61px;
 
     select {
       border: 1px solid #D9DADB;
@@ -281,13 +331,15 @@ defineEmits(["update:modelValue", "close"]);
   &__buttons {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    flex: 1 1 0;
 
     &_square {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 8px;
+      gap: 4px;
 
       border: none;
 
@@ -329,5 +381,74 @@ defineEmits(["update:modelValue", "close"]);
 
 
   padding: 14px 0;
+}
+
+.table {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1 1 0;
+
+  height: 380px;
+
+  margin-top: 32px;
+}
+
+.small-card_blue {
+  background: #EEF2FB;
+  border-radius: 3px;
+  width: 238px;
+
+  padding: 24px;
+  margin: 8px 0;
+
+  &__black-font {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    
+    color: #040811;
+  }
+
+  &__adding {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+
+    text-decoration-line: underline;
+
+    color: #2D00FF;
+
+    border: none;
+    background-color: transparent;
+  }
+}
+
+.hr-line {
+  width: 890px;
+
+  margin-top: calc(24px - 8px);
+
+  border: none;
+  border: 1px solid #D9DADB;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.chevron {
+  width: 48px;
+  height: 48px;
+
+  background: #EEF2FB;
+  border-radius: 50%;
+  border: none;
 }
 </style>
