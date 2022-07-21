@@ -5,7 +5,6 @@ import { ref } from "vue";
 let isModalOpened = ref(false);
 
 const open = () => {
-  console.log(isModalOpened);
   isModalOpened.value = !isModalOpened.value;
 }
 </script>

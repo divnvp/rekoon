@@ -233,6 +233,10 @@ defineEmits(["update:modelValue", "close"]);
       
       color: #9B9CA0;
     }
+
+    &:hover {
+      background-color: #EEF2FB;
+    }
   }
 
   &__button {
@@ -400,6 +404,10 @@ defineEmits(["update:modelValue", "close"]);
   background: #EEF2FB;
   border-radius: 3px;
   width: 238px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
   padding: 24px;
   margin: 8px 0;
